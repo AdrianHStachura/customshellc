@@ -7,3 +7,6 @@
 #include <sys/types.h> ////pid_t()
 
 
+int main(void){
+  
+}
