@@ -16,13 +16,17 @@ void get_input()
 
 }
 
-void execute_commands()
+void read_commands()
 {
 
 }
 
+void execute_commands()
+{
+    // reads commands and then executes
+    read_commands();
+}
+
 int main(void){
-    while(1){
-        get_input();
-    }
+    get_input();
 }
