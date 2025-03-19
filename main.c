@@ -8,6 +8,7 @@
 
 void printdir()
 {
+    // TODO PRINT THE HOSTNAME AND USERNAME OF THE COMPUTER USING gethostname() and getlogin()
     printf(":~");
     char buff[1024];
     size_t size = sizeof(buff);
