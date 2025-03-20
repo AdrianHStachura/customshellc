@@ -20,16 +20,8 @@ void printdir()
     size_t size = sizeof(buff);
 
     getcwd(buff,size);
+    printf("\33[34;1m%s\033[0m",buff);
 
-    for (int i = 0; i < size;i++)
-    {
-        if (buff[i] == '=')
-        {
-            break;
-        }
-        printf("\33[34;1m%c\033[0m",buff[i]);
-        
-    }
     // put $ to make end of directory might switch it back to /
     printf("$");
 }
@@ -38,7 +30,7 @@ void printdir()
 void get_input()
 {
     printdir();
-    char input_buffer[128];
+    char input_buffer[128];    
     int size = 128;
     fgets(input_buffer,size,stdin);
 
@@ -49,16 +41,8 @@ void get_input()
 
 //}
 
-/* Broken there is a scope eroor with the input_buffer but if you put it outside everything breaks TODO FIX IMPORTANT
-void execute_commands()
-{
-    if (strcmp(input_buffer,"exit") == 0)
-    {
-        printf("exiting");
-    }
-    
-}
-*/
+//Broken there is a scope eroor with the input_buffer but if you put it outside everything breaks TODO FIX IMPORTANT
+
 int main(void){
     get_input();
     printf("\033[34;1mThis text is darker blue!\033[0m\n");
