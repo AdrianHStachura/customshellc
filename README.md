@@ -1,2 +1,2 @@
 # CustomShellC
-Custom Shell written completely in C!
+Custom Linux-based Shell written completely in C! Inspired by the classic Linux Ubuntu Color Scheme 
