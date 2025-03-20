@@ -6,6 +6,8 @@
 #include <sys/wait.h> // // process management waitpid()
 #include <sys/types.h> ////pid_t()
 
+
+
 void printdir()
 {
     // TODO PRINT THE HOSTNAME AND USERNAME OF THE COMPUTER USING gethostname() and getlogin()
@@ -32,31 +34,34 @@ void printdir()
     printf("$");
 }
 
+
 void get_input()
 {
     printdir();
-    //printf("mysh>");
-    char buffer[128];
+    char input_buffer[128];
     int size = 128;
-    fgets(buffer,size,stdin);
+    fgets(input_buffer,size,stdin);
 
 }
 
-void read_commands()
-{
+//void read_commands() i genuinly might remove this 
+//{
 
-}
+//}
 
+/* Broken there is a scope eroor with the input_buffer but if you put it outside everything breaks TODO FIX IMPORTANT
 void execute_commands()
 {
-    // reads commands and then executes
-    read_commands();
+    if (strcmp(input_buffer,"exit") == 0)
+    {
+        printf("exiting");
+    }
+    
 }
-
+*/
 int main(void){
     get_input();
     printf("\033[34;1mThis text is darker blue!\033[0m\n");
-
-
+    execute_commands();
     return 0;
 }
