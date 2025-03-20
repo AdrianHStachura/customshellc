@@ -29,7 +29,7 @@ void printdir()
     printf("\33[34;1m%s\033[0m",buff);
 
     // put $ to make end of directory might switch it back to /
-    printf("$");
+    printf("$ ");
 }
 
 char input_buffer[128]; 
@@ -42,9 +42,24 @@ void get_input()
 
 }
 
+void cat(char* file_directory)
+{
+    FILE *file =fopen(file_directory, "r");
+    if (file == NULL)
+    {
+        printf("Not real\n");
+        return 1;
+    }
+    else
+    {
+        
+    }
+}
+
+
 int main(void){
     get_input();
-    printf("\033[34;1mThis text is darker blue!\033[0m\n");
+    printf("%s",input_buffer);
 
     return 0;
 }
