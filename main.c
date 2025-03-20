@@ -24,7 +24,8 @@ void printdir()
         printf("%c",buff[i]);
         
     }
-    printf("/");
+    // put $ to make end of directory might switch it back to /
+    printf("$");
 }
 
 void get_input()
