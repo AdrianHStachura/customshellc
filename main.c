@@ -5,6 +5,7 @@
 #include <errno.h> // error handling perror()
 #include <sys/wait.h> // // process management waitpid()
 #include <sys/types.h> ////pid_t()
+#include <pwd.h>
 
 
 
@@ -12,8 +13,13 @@ void printdir()
 {
     // TODO PRINT THE HOSTNAME AND USERNAME OF THE COMPUTER USING gethostname() and getlogin()
 
+    char host_buffer[64];
+
+    gethostname(host_buffer,64);
+    char* name = getpwuid(getuid())->pw_name;
+    printf("\33[92m%s%s\033[0m",name,"@");
+    printf("\33[92m%s\033[0m",host_buffer);
     
-    // COLOR THEMES REMOVE LINE printf("\33[92m   TEXT     \033[0m");
     printf(":");
     printf("\33[34;1m~\033[0m");
     char buff[1024];
@@ -26,26 +32,19 @@ void printdir()
     printf("$");
 }
 
-
+char input_buffer[128]; 
 void get_input()
 {
     printdir();
-    char input_buffer[128];    
+       
     int size = 128;
     fgets(input_buffer,size,stdin);
 
 }
 
-//void read_commands() i genuinly might remove this 
-//{
-
-//}
-
-//Broken there is a scope eroor with the input_buffer but if you put it outside everything breaks TODO FIX IMPORTANT
-
 int main(void){
     get_input();
     printf("\033[34;1mThis text is darker blue!\033[0m\n");
-    execute_commands();
+
     return 0;
 }
