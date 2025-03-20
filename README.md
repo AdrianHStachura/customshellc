@@ -1,2 +1,2 @@
 # CustomShellC
-Custom Shell
+Custom Shell written completely in C!
