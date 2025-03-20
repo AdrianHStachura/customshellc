@@ -9,7 +9,11 @@
 void printdir()
 {
     // TODO PRINT THE HOSTNAME AND USERNAME OF THE COMPUTER USING gethostname() and getlogin()
-    printf(":~");
+
+    
+    // COLOR THEMES REMOVE LINE printf("\33[92m   TEXT     \033[0m");
+    printf(":");
+    printf("\33[34;1m~\033[0m");
     char buff[1024];
     size_t size = sizeof(buff);
 
@@ -21,7 +25,7 @@ void printdir()
         {
             break;
         }
-        printf("%c",buff[i]);
+        printf("\33[34;1m%c\033[0m",buff[i]);
         
     }
     // put $ to make end of directory might switch it back to /
@@ -51,5 +55,8 @@ void execute_commands()
 
 int main(void){
     get_input();
+    printf("\033[34;1mThis text is darker blue!\033[0m\n");
+
+
     return 0;
 }
