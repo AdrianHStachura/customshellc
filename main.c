@@ -48,11 +48,11 @@ void cat(char* file_directory)
     if (file == NULL)
     {
         printf("Not real\n");
-        return 1;
+        return;
     }
     else
     {
-        
+        fread()
     }
 }
 
