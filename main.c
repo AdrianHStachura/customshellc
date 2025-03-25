@@ -47,7 +47,7 @@ void cat(char* file_directory)
     FILE *file =fopen(file_directory, "r");
     if (file == NULL)
     {
-        printf("Not real\n");
+        printf("Please enter a real directory.\n");
         return;
     }
     else
