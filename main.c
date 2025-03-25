@@ -8,7 +8,7 @@
 #include <pwd.h>
 
 
-
+char buff[1024];
 void printdir()
 {
     // TODO PRINT THE HOSTNAME AND USERNAME OF THE COMPUTER USING gethostname() and getlogin()
@@ -22,7 +22,7 @@ void printdir()
     
     printf(":");
     printf("\33[34;1m~\033[0m");
-    char buff[1024];
+    
     size_t size = sizeof(buff);
 
     getcwd(buff,size);
@@ -42,6 +42,7 @@ void get_input()
 
 }
 char cat_buffer[4096];
+
 void cat(char* file_directory)
 {
     FILE *file =fopen(file_directory, "r");
@@ -59,7 +60,11 @@ void cat(char* file_directory)
         return;
     }
 }
-
+char* argv = {buff,NULL};
+void execute(char* arguments)
+{
+    execv(arguments[0],arguments);
+}
 
 int main(void){
     get_input();
