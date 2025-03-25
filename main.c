@@ -41,7 +41,7 @@ void get_input()
     fgets(input_buffer,size,stdin);
 
 }
-
+char cat_buffer[4096];
 void cat(char* file_directory)
 {
     FILE *file =fopen(file_directory, "r");
@@ -52,7 +52,11 @@ void cat(char* file_directory)
     }
     else
     {
-        fread()
+        fread(cat_buffer, sizeof(char), sizeof(cat_buffer) - 1, file);
+        cat_buffer[sizeof(cat_buffer) - 1] = '\0';
+        printf("%s\n",cat_buffer);
+        fclose(file);
+        return;
     }
 }
 
@@ -60,6 +64,6 @@ void cat(char* file_directory)
 int main(void){
     get_input();
     printf("%s",input_buffer);
-
+    cat("text.txt");
     return 0;
 }
