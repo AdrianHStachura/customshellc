@@ -1,3 +1,6 @@
+// NOTE GENUINLY YOU DO NOT NEED TO MAKE COMMANDS FROM SCRATCH JUST EXECUTE THEM BY FORKING
+
+
 #include <stdio.h> // printf fgets()
 #include <stdlib.h> // malloc free exit()
 #include <string.h> // //strtok() strcmp()
@@ -62,13 +65,13 @@ void cat(char* file_directory)
 }
 //function that allows stuff to be executed
 //TODO FORKING 
-
+/*
 char* argv = {buff,NULL};
 void execute(char* arguments)
 {
     execv(arguments[0],arguments);
 }
-
+*/
 int main(void){
     get_input();
     printf("%s",input_buffer);
