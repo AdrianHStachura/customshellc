@@ -61,6 +61,7 @@ void cat(char* file_directory)
     }
 }
 //function that allows stuff to be executed
+//TODO FORKING 
 
 char* argv = {buff,NULL};
 void execute(char* arguments)
