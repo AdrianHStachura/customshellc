@@ -60,6 +60,8 @@ void cat(char* file_directory)
         return;
     }
 }
+//function that allows stuff to be executed
+
 char* argv = {buff,NULL};
 void execute(char* arguments)
 {
