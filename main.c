@@ -41,6 +41,5 @@ void execute_command()
 int main(void){
     get_input();
     printf("%s",input_buffer);
-    cat("text.txt");
     return 0;
 }
