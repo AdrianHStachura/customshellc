@@ -1,4 +1,14 @@
+#include <stdio.h> // printf fgets()
+#include <stdlib.h> // malloc free exit()
+#include <string.h> // //strtok() strcmp()
+#include <unistd.h> //fork() execvp() chdir()
+#include <errno.h> // error handling perror()
+#include <sys/wait.h> // // process management waitpid()
+#include <sys/types.h> ////pid_t()
+#include <pwd.h>
 
+
+char buff[1024];
 void printdir()
 {
     // TODO PRINT THE HOSTNAME AND USERNAME OF THE COMPUTER USING gethostname() and getlogin()
@@ -23,6 +33,7 @@ void printdir()
 }
 
 char input_buffer[128]; 
+
 void get_input()
 {
     printdir();
@@ -32,14 +43,16 @@ void get_input()
 
 }
 
+
+
 void execute_command()
 {
-    
-}
 
+}
+char* arguments = input_buffer;
 
 int main(void){
     get_input();
-    printf("%s",input_buffer);
+    printf("%s\n",arguments[1]);
     return 0;
 }
