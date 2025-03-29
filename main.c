@@ -1,6 +1,3 @@
-// NOTE GENUINLY YOU DO NOT NEED TO MAKE COMMANDS FROM SCRATCH JUST EXECUTE THEM BY FORKING
-
-
 #include <stdio.h> // printf fgets()
 #include <stdlib.h> // malloc free exit()
 #include <string.h> // //strtok() strcmp()
@@ -44,25 +41,7 @@ void get_input()
     fgets(input_buffer,size,stdin);
 
 }
-char cat_buffer[4096];
 
-void cat(char* file_directory)
-{
-    FILE *file =fopen(file_directory, "r");
-    if (file == NULL)
-    {
-        printf("Please enter a real directory.\n");
-        return;
-    }
-    else
-    {
-        fread(cat_buffer, sizeof(char), sizeof(cat_buffer) - 1, file);
-        cat_buffer[sizeof(cat_buffer) - 1] = '\0';
-        printf("%s\n",cat_buffer);
-        fclose(file);
-        return;
-    }
-}
 //function that allows stuff to be executed
 //TODO FORKING 
 /*
