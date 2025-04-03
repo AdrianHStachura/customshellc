@@ -52,10 +52,13 @@ void execute_command(char* arguments)
     if (processid == 0){
         printf("This Is baby");
         // how to tell compiler that it is the location of ls?
-        execv(file,arguments);
+        execv("/bin/cd",arguments); // change cd to file we are testing
     }
 }
+// TODO fix we need the last thing to be null because then we can use the execv function
+input_buffer[128] = NULL;
 char* usertext = input_buffer;
+
 
 int main(void){
     get_input();
