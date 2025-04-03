@@ -44,15 +44,22 @@ void get_input()
 }
 
 
-
-void execute_command()
+// Arguments must end with NULL
+void execute_command(char* arguments)
 {
+    pid_t processid = fork();
 
+    if (processid == 0){
+        printf("This Is baby");
+        // how to tell compiler that it is the location of ls?
+        execv(file,arguments);
+    }
 }
-char* arguments = input_buffer;
+char* usertext = input_buffer;
 
 int main(void){
     get_input();
-    printf("%s\n",arguments[1]);
+    printf("%s\n",usertext);
+    execute_command(usertext);
     return 0;
 }
